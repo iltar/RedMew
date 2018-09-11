@@ -28,6 +28,8 @@ require 'paint'
 require 'score'
 require 'popup'
 
+require 'Diggy.Scenario'.register(_DEBUG)
+
 local Event = require 'utils.event'
 local Donators = require 'resources.donators'
 
