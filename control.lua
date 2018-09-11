@@ -10,7 +10,7 @@ require 'follow'
 require 'autodeconstruct'
 require 'corpse_util'
 --require 'infinite_storage_chest'
-require 'fish_market'
+--require 'fish_market'
 require 'reactor_meltdown'
 require 'train_saviour'
 require 'map_gen.shared.perlin_noise'
@@ -27,6 +27,8 @@ require 'blueprint_helper'
 require 'paint'
 require 'score'
 require 'popup'
+
+require 'Diggy.Scenario'.register(_DEBUG)
 
 local Event = require 'utils.event'
 
