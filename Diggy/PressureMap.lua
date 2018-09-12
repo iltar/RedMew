@@ -87,7 +87,7 @@ end
 
 function PressureMap.process_maxed_values_buffer(surface, callback)
     if ('table' ~= type(surface) or not surface.name) then
-        error('PressureMap.process_maxed_values_buffer argument #1 expects a LuaSurface, ' ..surface.name .. ' given.')
+        error('PressureMap.process_maxed_values_buffer argument #1 expects a LuaSurface, ' .. type(surface) .. ' given.')
     end
     if ('function' ~= type(callback)) then
         error('PressureMap.process_maxed_values_buffer argument #2 expects a callback function, ' .. type(callback) .. ' given.')
