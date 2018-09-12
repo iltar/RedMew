@@ -10,16 +10,20 @@ local defaultValue = 1
 local _mt_y = { __index=function(tbl,key) tbl[key] = defaultValue return tbl[key] end}
 local _mt_x = {__index=function(tbl,key) tbl[key] = setmetatable({},_mt_y) return rawget(tbl,key) end}
 
-Event.on_load(function()
-  for _,map in pairs(global.pressure_map_storage) do
-    for _,quad in pairs(map) do
-      setmetatable(quad,_mt_x)
-      for _,stbl in pairs(quad) do
-        setmetatable(stbl,_mt_y)
-      end
+local function set_metatables() 
+    for _,map in pairs(global.pressure_map_storage) do
+        for _,quad in pairs(map) do
+            setmetatable(quad,_mt_x)
+            for _,stbl in pairs(quad) do
+                setmetatable(stbl,_mt_y)
+            end
+        end
     end
-  end
-end)
+end
+
+
+Event.on_init(set_metatables)
+Event.on_load(set_metatables)
 
 
 --[[--
