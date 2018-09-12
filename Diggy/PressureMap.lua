@@ -6,7 +6,7 @@ local PressureMap = {}
 
 -- main block
 global.pressure_map_storage = {}
-local defaultValue = 0
+local defaultValue = 1
 local _mt_y = { __index=function(tbl,key) tbl[key] = defaultValue return tbl[key] end}
 local _mt_x = {__index=function(tbl,key) tbl[key] = setmetatable({},_mt_y) return rawget(tbl,key) end}
 
