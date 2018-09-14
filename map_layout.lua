@@ -19,6 +19,7 @@ local tiles_per_tick = 32
 --require "map_gen.combined.dimensions"
 --require "map_gen.combined.dagobah_swamp"
 --require "map_gen.combined.meteor_strike" --unfinished
+--require "map_gen.combined.diggy"
 
 --presets--
 --shape = require "map_gen.presets.template"
